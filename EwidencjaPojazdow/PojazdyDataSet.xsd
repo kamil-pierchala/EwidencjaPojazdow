@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PojazdyDataSet" targetNamespace="http://tempuri.org/PojazdyDataSet.xsd" xmlns:mstns="http://tempuri.org/PojazdyDataSet.xsd" xmlns="http://tempuri.org/PojazdyDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="PojazdyDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="PojazdyDataSet" msprop:Generator_DataSetName="PojazdyDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PojazdyTable" msprop:Generator_RowEvHandlerName="PojazdyTableRowChangeEventHandler" msprop:Generator_RowDeletedName="PojazdyTableRowDeleted" msprop:Generator_RowDeletingName="PojazdyTableRowDeleting" msprop:Generator_RowEvArgName="PojazdyTableRowChangeEvent" msprop:Generator_TablePropName="PojazdyTable" msprop:Generator_RowChangedName="PojazdyTableRowChanged" msprop:Generator_RowChangingName="PojazdyTableRowChanging" msprop:Generator_TableClassName="PojazdyTableDataTable" msprop:Generator_RowClassName="PojazdyTableRow" msprop:Generator_TableVarName="tablePojazdyTable" msprop:Generator_UserTableName="PojazdyTable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NrRejestracyjny" msprop:Generator_ColumnPropNameInRow="NrRejestracyjny" msprop:Generator_ColumnPropNameInTable="NrRejestracyjnyColumn" msprop:Generator_ColumnVarNameInTable="columnNrRejestracyjny" msprop:Generator_UserColumnName="NrRejestracyjny" type="xs:string" minOccurs="0" />
+              <xs:element name="Marka" msprop:Generator_ColumnPropNameInRow="Marka" msprop:Generator_ColumnPropNameInTable="MarkaColumn" msprop:Generator_ColumnVarNameInTable="columnMarka" msprop:Generator_UserColumnName="Marka" type="xs:string" minOccurs="0" />
+              <xs:element name="Wlasciciel" msprop:Generator_ColumnPropNameInRow="Wlasciciel" msprop:Generator_ColumnPropNameInTable="WlascicielColumn" msprop:Generator_ColumnVarNameInTable="columnWlasciciel" msprop:Generator_UserColumnName="Wlasciciel" type="xs:string" minOccurs="0" />
+              <xs:element name="DataPrzegladu" msprop:Generator_ColumnPropNameInRow="DataPrzegladu" msprop:Generator_ColumnPropNameInTable="DataPrzegladuColumn" msprop:Generator_ColumnVarNameInTable="columnDataPrzegladu" msprop:Generator_UserColumnName="DataPrzegladu" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
