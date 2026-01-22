@@ -19,7 +19,7 @@ Zintegrowany system do zarządzania flotą pojazdów, składający się z aplika
 * **Zarządzanie:** Pełny CRUD w przeglądarce.
 * **Responsywność:** Interfejs oparty o Bootstrap 5, dostosowany do urządzeń mobilnych.
 * **Trwałość danych:** Wykorzystanie `localStorage` do zapamiętywania wpisów po odświeżeniu strony.
-* **Design:** Neonowa stylistyka z interaktywnymi elementami (hover effects).
+* **Design:** Neonowa stylistyka z interaktywnymi elementami.
 
 ## Jak uruchomić
 #### Aplikacja desktopowa:
