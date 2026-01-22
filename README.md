@@ -22,8 +22,10 @@ Zintegrowany system do zarządzania flotą pojazdów, składający się z aplika
 * **Design:** Neonowa stylistyka z interaktywnymi elementami (hover effects).
 
 ## Jak uruchomić
-1. **Aplikacja desktopowa:** Otwórz plik `EwidencjaPojazdow.sln` w Visual Studio i uruchom projekt poprzez wciśnięcie F5.
-2. **Strona WWW:** Otwórz plik `EwidencjaWeb/index.html` w dowolnej przeglądarce.
+1. **Aplikacja desktopowa:** 
+Otwórz plik `EwidencjaPojazdow.sln` w Visual Studio i uruchom projekt poprzez wciśnięcie F5.
+2. **Strona WWW:** 
+Otwórz plik `EwidencjaWeb/index.html` w dowolnej przeglądarce.
 
 ## Struktura folderów
 * `/EwidencjaPojazdow` - Kod źródłowy aplikacji WinForms.
