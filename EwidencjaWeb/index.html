@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ewidencja pojazdów na zajęcia z Projektowania interfejsów użytkownika</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #0d0221; 
+            color: #e0e0e0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .table-container { 
+            background: #190a33; 
+            border-radius: 15px; 
+            padding: 25px; 
+            box-shadow: 0 0 20px rgba(188, 19, 254, 0.4); 
+            border: 1px solid #bc13fe;
+        }
+
+        h2 {
+            color: #bc13fe;
+            text-shadow: 0 0 10px rgba(188, 19, 254, 0.8);
+            font-weight: bold;
+        }
+
+        .table { color: #e0e0e0; border-color: #4b0082; }
+        .table-dark {
+            --bs-table-bg: #2d005e;
+            --bs-table-border-color: #bc13fe;
+        }
+
+        .btn-primary {
+            background-color: #bc13fe;
+            border: none;
+            box-shadow: 0 0 10px rgba(188, 19, 254, 0.6);
+        }
+        .btn-primary:hover { background-color: #d651ff; box-shadow: 0 0 15px #bc13fe; }
+
+        .btn-success {
+            background-color: #00f2ff;
+            border: none;
+            color: #000;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.6);
+        }
+        .modal-content {
+            background-color: #190a33;
+            border: 2px solid #bc13fe;
+            color: #e0e0e0;
+        }
+        .form-control {
+            background-color: #0d0221;
+            border: 1px solid #4b0082;
+            color: #fff;
+        }
+        .form-control:focus {
+            background-color: #0d0221;
+            color: #fff;
+            border-color: #bc13fe;
+            box-shadow: 0 0 8px #bc13fe;
+        }
+        .invalid-feedback {
+            color: #ff0055;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <div class="table-container">
+        <div class="d-flex justify-content-between align-items-center mb-4 text-wrap">
+            <h2>Ewidencja pojazdów na zajęcia z Projektowania interfejsów użytkownika</h2>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#vehicleModal">Dodaj pojazd</button>
+        </div>
+        <div id="alertPlaceholder"></div>
+        
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Numer rejestracyjny</th>
+                    <th>Marka</th>
+                    <th>Model</th>
+                    <th>Rok</th>
+                    <th>Data przeglądu</th>
+                    <th>Właściciel</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody id="vehicleTable">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="vehicleModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Dane pojazdu</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="vehicleForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label">Numer rejestracyjny</label>
+                        <input type="text" class="form-control" id="regInput" required pattern="^[A-Z0-9 ]{5,10}$">
+                        <div class="invalid-feedback">Wpisz poprawny numer rejestracyjny (5-10 znaków)!</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Marka</label>
+                            <input type="text" class="form-control" id="brandInput" required>
+                            <div class="invalid-feedback">Wpisz poprawną markę!</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Model</label>
+                            <input type="text" class="form-control" id="modelInput" required>
+                            <div class="invalid-feedback">Wpisz poprawny model!</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Rok produkcji</label>
+                            <input type="number" class="form-control" id="yearInput" min="1900" max="2026" required>
+                            <div class="invalid-feedback">Wpisz poprawny rok produkcji!</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Rok ostatniego przeglądu</label>
+                            <input type="number" class="form-control" id="dateInput" min="1900" max="2026" required>
+                            <div class="invalid-feedback">Wpisz poprawny rok ostatniego przeglądu!</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Właściciel</label>
+                        <input type="text" class="form-control" id="ownerInput" required pattern="^[A-Za-zAAaCcEeLlNnOoSsZzZz ]+$">
+                        <div class="invalid-feedback">Niepoprawne dane właściciela!</div>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Zapisz</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content border-danger">
+            <div class="modal-body text-center">
+                <p>Czy na pewno chcesz usunąć ten pojazd?</p>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                <button class="btn btn-danger" id="confirmDeleteBtn">Usuń</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
